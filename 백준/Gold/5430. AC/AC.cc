@@ -55,7 +55,6 @@ int main() {
 				}
 			}
 		}
-
 		if (err) {
 			cout << "error" << endl;
 		}
