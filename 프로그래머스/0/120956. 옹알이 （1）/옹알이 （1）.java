@@ -1,18 +1,14 @@
-import java.util.*;
-
 class Solution {
     public int solution(String[] babbling) {
+        String[]tmp = {"aya", "ye", "woo", "ma"};
         int answer = 0;
-        String[] tmp = {"aya", "ye", "woo", "ma"};
-        for(int i=0; i<babbling.length; i++){
-            for(int j=0; j<tmp.length; j++){
-                babbling[i] = babbling[i].replace(tmp[j], " ");
+        for(String b : babbling){
+            for(String t : tmp){
+                b = b.replace(t, " ");
             }
-        }
-        for(int i = 0; i<babbling.length; i++){
-            if(babbling[i].trim().equals("")){
+            b = b.replace(" ", "");
+            if(b.equals(""))
                 answer++;
-            }
         }
         return answer;
     }
