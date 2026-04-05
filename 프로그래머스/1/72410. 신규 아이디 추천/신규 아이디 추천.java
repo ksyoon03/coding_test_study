@@ -31,11 +31,9 @@ class Solution {
         }
 
         // 7
-        if(answer.length() <= 2){
-            char c = answer.charAt(answer.length()-1);
-            while(answer.length() < 3){
-                answer += c;
-            }
+        char c = answer.charAt(answer.length()-1);
+        while(answer.length() < 3){
+            answer += c;
         }
 
         return answer;
