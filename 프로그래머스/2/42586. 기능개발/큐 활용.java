@@ -4,7 +4,7 @@ class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
         Queue<Integer> q = new LinkedList<>();
         for(int i = 0; i < progresses.length; i++){
-            q.add((int)Math.ceil(100.0 - progresses[i]) / speeds[i]);
+            q.add((int)Math.ceil((100.0 - progresses[i]) / speeds[i]));
         }
         List<Integer> list = new ArrayList<>();
         while(!q.isEmpty()){
