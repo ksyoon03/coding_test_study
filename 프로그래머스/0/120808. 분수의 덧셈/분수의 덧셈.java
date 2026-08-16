@@ -1,20 +1,24 @@
 class Solution {
-    public int[] solution(int num1, int denum1, int num2, int denum2) {
-        int[] answer = new int[2];
+    public int[] solution(int numer1, int denom1, int numer2, int denom2) {
+        int mid_denom = denom1*denom2;
+        int mid_num1 = numer1*denom2;
+        int mid_num2 = numer2*denom1;
+        int mid_sum = mid_num1+mid_num2;
+        int i = mid_sum,j = mid_denom,p,g=0,min;
+        if(i<j) {
+			min=i;
+		} else {
+			min = j;
+		}
+		for(p = 1;p<=min;p++) {
+			if(i%p==0&&j%p==0) {
+				g=p;
+			}
+		}
+        mid_sum = i/g;
+        mid_denom = j/g;
         
-        int num3 = num1*denum2 + num2*denum1;
-        int denum3 = denum1*denum2;
-        int max = 1;
-        
-        for(int i=1; i<=num3 && i<=denum3; i++){
-            if(num3%i==0 && denum3 % i==0){
-                max=i;
-            }
-        }
-        
-        answer[0] = num3 / max;
-        answer[1] = denum3 / max;
-        
+        int[] answer = {mid_sum,mid_denom};
         return answer;
     }
 }
